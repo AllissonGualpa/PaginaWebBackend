@@ -6,7 +6,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/usuarios');
 var climaRouter = require('./routes/clima');
 var pronosticoClimaRouter = require('./routes/pronosticoClima');
 var restClimaRouter = require('./routes/rest/clima');
@@ -14,6 +14,12 @@ var restPronosticoClimaRouter = require('./routes/rest/pronosticoClima');
 
 var app = express();
 
+const usuariosRouter = require('./routes/usuarios'); // Ruta de usuarios
+
+app.use(express.json()); // Para procesar JSON en el cuerpo de las solicitudes
+app.use('/usuarios', usuariosRouter); // Prefijo para las rutas de usuarios
+
+module.exports = app;
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

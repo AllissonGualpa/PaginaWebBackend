@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "admin",
+    "password": "arrozconleche",
     "database": "registros_clima",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port": "3307"
+    "dialect": "mariadb",
+    "port": "3306"
   },
   "test": {
     "username": "root",
